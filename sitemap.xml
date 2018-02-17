@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jamestwilson.github.io/posts/weekends/</loc>
+    <lastmod>2018-02-17T10:38:07-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jamestwilson.github.io/posts/beginning/</loc>
     <lastmod>2018-02-16T00:20:37-06:00</lastmod>
   </url>
@@ -14,13 +19,13 @@
   
   <url>
     <loc>https://jamestwilson.github.io/</loc>
-    <lastmod>2018-02-16T00:20:37-06:00</lastmod>
+    <lastmod>2018-02-17T10:38:07-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jamestwilson.github.io/posts/</loc>
-    <lastmod>2018-02-16T00:20:37-06:00</lastmod>
+    <lastmod>2018-02-17T10:38:07-06:00</lastmod>
     <priority>0</priority>
   </url>
   

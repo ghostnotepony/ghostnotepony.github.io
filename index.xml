@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2021 | Follow on &lt;a href=&#34;https://twitter.com/ghostnotepony&#34; target=&#34;_blank&#34;&gt;Twitter&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 17 Apr 2021 22:00:00 -0500</lastBuildDate><atom:link href="https://ghostnotepony.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Apr 2021 20:30:00 -0500</lastBuildDate><atom:link href="https://ghostnotepony.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Brief thoughts on CMR vs. SMR in ZFS</title>
+      <link>https://ghostnotepony.github.io/posts/zfs-smr-cmr/</link>
+      <pubDate>Sat, 24 Apr 2021 20:30:00 -0500</pubDate>
+      
+      <guid>https://ghostnotepony.github.io/posts/zfs-smr-cmr/</guid>
+      <description>Well..I got lucky.. As the title says, I did indeed get lucky recently as I happened to get a very timely reminder (as the return window for the drive was about to close..) about CMR and SMR drives. I had learned a while back that the latter is quite nonperformant and potentially unreliable when used in ZFS, as these benchmarks demonstrate. I honestly had not thought of that factor when researching drives for my new ZFS mirror, though.</description>
+    </item>
+    
     <item>
       <title>Thoughts on my new workstation/server conversion</title>
       <link>https://ghostnotepony.github.io/posts/newtech/</link>

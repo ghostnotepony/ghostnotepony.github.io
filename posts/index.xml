@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2021 | Follow on &lt;a href=&#34;https://twitter.com/ghostnotepony&#34; target=&#34;_blank&#34;&gt;Twitter&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 24 Apr 2021 20:30:00 -0500</lastBuildDate><atom:link href="https://ghostnotepony.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 May 2021 01:35:00 -0500</lastBuildDate><atom:link href="https://ghostnotepony.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Brief thoughts on recent fan noise issues</title>
+      <link>https://ghostnotepony.github.io/posts/fannoise/</link>
+      <pubDate>Sun, 30 May 2021 01:35:00 -0500</pubDate>
+      
+      <guid>https://ghostnotepony.github.io/posts/fannoise/</guid>
+      <description>Silent Lucidity..? As I mentioned in a recent blog post, an issue that I had with my new workstation was that it was making a lot of excessive noise whenever the slightest load would be put on the processor. I mentioned the Dark Rock Slim in the post and that&amp;rsquo;s what I ended up installing. That install was quite educational and went really well..just took a long time; it involved removing every cable that was plugged in and removing the motherboard itself from the case.</description>
+    </item>
+    
     <item>
       <title>Brief thoughts on CMR vs. SMR in ZFS</title>
       <link>https://ghostnotepony.github.io/posts/zfs-smr-cmr/</link>

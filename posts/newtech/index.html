@@ -75,7 +75,7 @@
 <p>I was also happy that <a href="https://gitlab.com/CalcProgrammer1/OpenRGB">OpenRGB</a> worked right away, though I&rsquo;m still figuring out how to use it more effectively.  The CLI can be used in scripts as well, though I&rsquo;m a bit disappointed that the front fans can&rsquo;t have their colors changed individually..I wanted them to show the bi colors ^^  Otherwise, this system is so much faster than the old and I&rsquo;m still marveling over how I can have the same programs open but use about 15-20% of memory instead of 70-80 (the difference between 12 and 32..and also moving up to DDR4-3200 speed-wise.)  I tried out everything in my very small Steam library and the most taxing game was <a href="https://store.steampowered.com/app/587620/Okami_HD/">Okami HD</a>, which got the processor to 25% usage overall.</p>
 <p>Something I need to rectify is the number of fans in this system..I just have the stock front 3 running and, as a result, it gets louder than I&rsquo;m accustomed to when playing a game/taxing the CPU at all.  My previous box had front, overhead, and back fans which helped that issue, to my knowledge.  Of course, this case has room for a lot more fans..and potentially more color combinations. ^^</p>
 <p>A couple of software issues I had were that suspending the system didn&rsquo;t work (it would just turn back on) and that WOL (Wake on LAN) wasn&rsquo;t doing anything.  To fix the latter, I had to configure the interface to utilize that functionality (much as I did with the previous one, though I forgot about it..fortunately, I had the old /etc directory handy ^^)  To fix the suspension issue, I eventually figured out I had to change /proc/acpi/wakeup and disable everything there or those components would keep instantly waking the system up.  So I wrote a suspend script to handle that:</p>
-<pre><code>#!/bin/sh
+<pre tabindex="0"><code>#!/bin/sh
 
 if [ $UID != 0 ]; then
         echo &quot;Run with sudo&quot;
@@ -96,7 +96,7 @@ systemctl suspend
 </code></pre><p>And it works just fine..most of the time ^^</p>
 <p>Another minor issue that I hoped moving to a new system/distro would fix was that the monitor does not go into suspend mode when the system is locked..instead, it shows a black screen while staying on.  Until I looked into it some more, I thought it was a problem with my monitor..instead, it&rsquo;s a <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1894624">known bug</a>.  Whether I&rsquo;m in X.org or Wayland, the issue occurs.  From what I read, using a DisplayPort monitor might fix it but that&rsquo;s an expensive solution to a very minor issue.  (An DP -&gt; HDMI cable seems like a much cheaper alternative, but that won&rsquo;t work either, bah.)</p>
 <p>However, running this command in a loop <em>does</em> suspend the monitor properly:</p>
-<pre><code>$ busctl --user set-property org.gnome.Mutter.DisplayConfig /org/gnome/Mutter/DisplayConfig org.gnome.Mutter.DisplayConfig PowerSaveMode i 3
+<pre tabindex="0"><code>$ busctl --user set-property org.gnome.Mutter.DisplayConfig /org/gnome/Mutter/DisplayConfig org.gnome.Mutter.DisplayConfig PowerSaveMode i 3
 </code></pre><p>I was glad to see this, even though it&rsquo;s not a viable workaround as there&rsquo;s no way to interrupt it aside from using another device to ssh in and kill the process..that&rsquo;s too much work for something like this.  Yet, it demonstrates that this is a software issue and can be fixed..perhaps in the next major release of GNOME.</p>
 <p>The other thing I&rsquo;ve tweaked lately is changing the fan speed curve to not be so aggressive..as I talked about above, it was causing lots of noise/sudden fan speed-ups for the slightest bit of CPU usage.  I am considering getting an aftermarket cooler <a href="https://www.bequiet.com/en/cpucooler/1659">like this one</a> but first I&rsquo;m going to max out the fans in the case to see if that helps noise/CPU temperature.  (Edit: it has helped so far, thankfully.)</p>
 <p>Otherwise..I&rsquo;m very, very happy with my new workstation ^^</p>
@@ -124,7 +124,7 @@ systemctl suspend
 <p>All that aside, Arch works quite well for me and I&rsquo;ve found that the rolling release schedule fits a workstation/personal laptop a lot better than Fedora&rsquo;s path of upgrading every 6-12 months.  (Server distribution releases, though, are slow and consistent by design..I&rsquo;m glad I don&rsquo;t have to constantly update my server and it&rsquo;ll receive at least minor updates until 2029..or longer if I can upgrade to the next major release.)  I will compliment Fedora on making system upgrades simple and straightforward; for several years, I never had to reinstall the OS to migrate.</p>
 <p>Overall, I think Fedora is still a good distribution and is always a good indicator of where RHEL is headed next, but it&rsquo;s not the right one for me at this moment.</p>
 <h2 id="appendix-owncloud-in-the-web-root-nginx-configuration">Appendix: owncloud (in the web root) nginx configuration</h2>
-<pre><code>   server { 
+<pre tabindex="0"><code>   server { 
       listen 443 ssl http2;
       include /etc/nginx/default.d/*.conf;
       server_name server.fqdn.org;

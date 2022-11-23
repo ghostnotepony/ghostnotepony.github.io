@@ -46,6 +46,8 @@
           <h2 class="title is-5">Twitch</h2>
         </a><a class="nav-item" href="https://ghostnotepony.github.io/index.xml">
           <h2 class="title is-5">RSS</h2>
+        </a><a class="nav-item" href="https://equestria.social/@ghostnote">
+          <h2 class="title is-5">Mastodon</h2>
         </a></div>
       
 
@@ -78,11 +80,11 @@
 <pre tabindex="0"><code>#!/bin/sh
 
 if [ $UID != 0 ]; then
-        echo &quot;Run with sudo&quot;
+        echo &#34;Run with sudo&#34;
         exit 255
 fi
 
-for i in $(grep pci /proc/acpi/wakeup | cut -d ' ' -f1)
+for i in $(grep pci /proc/acpi/wakeup | cut -d &#39; &#39; -f1)
 do
 	echo $i &gt; /proc/acpi/wakeup
 done
@@ -133,7 +135,7 @@ systemctl suspend
       ssl_prefer_server_ciphers on;
       ssl_protocols TLSv1.2 TLSv1.3;
       ssl_ciphers EECDH+AESGCM:EDH+AESGCM; 
-      add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot; always;
+      add_header Strict-Transport-Security &#34;max-age=31536000; includeSubDomains&#34; always;
 
       # Additional config below derived from https://doc.owncloud.org/server/8.0/admin_manual/installation/nginx_configuration.html
       # https://central.owncloud.org/t/nginx-documentation-unofficial-community/22365/2 is also helpful
@@ -208,28 +210,28 @@ systemctl suspend
       # Make sure it is BELOW the PHP block
       location ~ \.(?:css|js)$ {
          try_files $uri /index.php$uri$is_args$args;
-         add_header Cache-Control &quot;max-age=15778463&quot; always;
+         add_header Cache-Control &#34;max-age=15778463&#34; always;
 
          # Add headers to serve security related headers (It is intended to have those duplicated to the ones above)
          # The always parameter ensures that the header is set for all responses, including internally generated error responses.
          # Before enabling Strict-Transport-Security headers please read into this topic first.
          # https://www.nginx.com/blog/http-strict-transport-security-hsts-and-nginx/
 
-         #add_header Strict-Transport-Security &quot;max-age=15552000; includeSubDomains; preload&quot; always;
-         add_header X-Content-Type-Options &quot;nosniff&quot; always;
-         add_header X-Frame-Options &quot;SAMEORIGIN&quot; always;
-         add_header X-XSS-Protection &quot;1; mode=block&quot; always;
-         add_header X-Robots-Tag &quot;none&quot; always;
-         add_header X-Download-Options &quot;noopen&quot; always;
-         add_header X-Permitted-Cross-Domain-Policies &quot;none&quot; always;
-         # Optional: Don't log access to assets
+         #add_header Strict-Transport-Security &#34;max-age=15552000; includeSubDomains; preload&#34; always;
+         add_header X-Content-Type-Options &#34;nosniff&#34; always;
+         add_header X-Frame-Options &#34;SAMEORIGIN&#34; always;
+         add_header X-XSS-Protection &#34;1; mode=block&#34; always;
+         add_header X-Robots-Tag &#34;none&#34; always;
+         add_header X-Download-Options &#34;noopen&#34; always;
+         add_header X-Permitted-Cross-Domain-Policies &#34;none&#34; always;
+         # Optional: Don&#39;t log access to assets
          access_log off;
       }
 
       location ~ \.(?:svg|gif|png|html|ttf|woff|ico|jpg|jpeg|map|json)$ {
-         add_header Cache-Control &quot;public, max-age=7200&quot; always;
+         add_header Cache-Control &#34;public, max-age=7200&#34; always;
          try_files $uri /index.php$uri$is_args$args;
-         # Optional: Don't log access to other assets
+         # Optional: Don&#39;t log access to other assets
          access_log off;
       }
    }
@@ -249,7 +251,7 @@ systemctl suspend
 
 <section class="section">
   <div class="container has-text-centered">
-    <p>&copy; 2021 | Follow on <a href="https://twitter.com/ghostnotepony" target="_blank">Twitter</a></p>
+    <p>&copy; 2022 | Follow on <a rel="me" href="https://equestria.social/@ghostnote">Mastodon</a></p>
     
       <p>Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/ribice/kiss">Kiss</a>.</p>
     

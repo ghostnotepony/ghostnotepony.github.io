@@ -7,7 +7,7 @@
 <title>Brief thoughts on CMR vs. SMR in ZFS | Ghost Note</title>
 
 <meta property='og:title' content='Brief thoughts on CMR vs. SMR in ZFS - Ghost Note'>
-<meta property='og:description' content='Well..I got lucky.. As the title says, I did indeed get lucky recently as I happened to get a very timely reminder (as the return window for the drive was about to close..) about CMR and SMR drives. I had learned a while back that the latter is quite nonperformant and potentially unreliable when used in ZFS, as these benchmarks demonstrate. I honestly had not thought of that factor when researching drives for my new ZFS mirror, though.'>
+<meta property='og:description' content='Well..I got lucky..'>
 <meta property='og:url' content='https://ghostnotepony.github.io/posts/zfs-smr-cmr/'>
 <meta property='og:site_name' content='Ghost Note'>
 <meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2021-04-24T20:30:00-05:00'><meta property='article:modified_time' content='2021-04-24T20:30:00-05:00'><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@ghostnotepony'><meta name='twitter:creator' content='@'>
@@ -67,8 +67,8 @@
     <h1 class="title">Brief thoughts on CMR vs. SMR in ZFS</h1>
     
     <div class="content">
-      <h2 id="welli-got-lucky">Well..I got lucky..</h2>
-<p>As the title says, I did indeed get lucky recently as I happened to get a very timely reminder (as the return window for the drive was about to close..) about CMR and SMR drives. I had learned a while back that the latter is quite nonperformant and potentially unreliable when used in ZFS, as <a href="https://www.servethehome.com/wd-red-smr-vs-cmr-tested-avoid-red-smr/">these benchmarks demonstrate</a>.  I honestly had not thought of that factor when researching drives for my new ZFS mirror, though.  Unfortunately, the drive I had gotten (and was planning to buy another one of shortly) was on <a href="https://www.truenas.com/community/resources/list-of-known-smr-drives.141/">this list</a>.  Instead, I got 2 CMR drives along with a SATA PCI-Express card.  When all of that arrived, I installed the card and the new drives.  (I also needed to use a power cable splitter to get enough SATA power connectors..at this point, the system had 5 drives in it).  This allowed me to use <a href="https://docs.oracle.com/cd/E19253-01/819-5461/gbcet/index.html">zpool replace</a> to transparently move the entire mirrored pool to the new drives..the whole procedure took about 3 hours, which was quite a bit less than I had been expecting.</p>
+      <p>Well..I got lucky..</p>
+<p>As the summary says, I did indeed get lucky recently as I happened to get a very timely reminder (as the return window for the drive was about to close..) about CMR and SMR drives. I had learned a while back that the latter is quite nonperformant and potentially unreliable when used in ZFS, as <a href="https://www.servethehome.com/wd-red-smr-vs-cmr-tested-avoid-red-smr/">these benchmarks demonstrate</a>.  I honestly had not thought of that factor when researching drives for my new ZFS mirror, though.  Unfortunately, the drive I had gotten (and was planning to buy another one of shortly) was on <a href="https://www.truenas.com/community/resources/list-of-known-smr-drives.141/">this list</a>.  Instead, I got 2 CMR drives along with a SATA PCI-Express card.  When all of that arrived, I installed the card and the new drives.  (I also needed to use a power cable splitter to get enough SATA power connectors..at this point, the system had 5 drives in it).  This allowed me to use <a href="https://docs.oracle.com/cd/E19253-01/819-5461/gbcet/index.html">zpool replace</a> to transparently move the entire mirrored pool to the new drives..the whole procedure took about 3 hours, which was quite a bit less than I had been expecting.</p>
 <p>I then removed the drives and prepared the SMR drive for return/refund.  The other drive from the old mirror can finally take a rest after years of reliable service..and watching newer drives come and go.  The first minor issue I ran into was when I started the system up with the new drives..one of them didn&rsquo;t show up.  I switched around SATA cables and ports and such..still not there.  Eventually, I figured out that I couldn&rsquo;t use the same SATA power cable that I had been using with the two old drives and the boot drive as the new ones draw more power (7200 RPM vs. 5400)..so I gave the drive a dedicated cable and it came up.  However, something wasn&rsquo;t quite right:</p>
 <pre tabindex="0"><code> state: ONLINE
 status: One or more devices has experienced an unrecoverable error.  An
@@ -104,7 +104,6 @@ errors: No known data errors
 equipment you&rsquo;re getting and make sure that it suits the purpose that you&rsquo;re
 using it for.  SMR drives do have their uses (long term/cold storage and
 archiving in general), but are not to be used with ZFS.</p>
-
       
       <div class="related">
 </div>
